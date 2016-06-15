@@ -120,4 +120,4 @@ java.lang.IllegalArgumentException: No matching constant for [0]
 
 ## To eliminate stack trace
 
-* Change Brixton.SR1 in pom to Brixton.RELEASE & rebuild
+* Change Brixton.SR1 in pom spring-cloud-dependencies to Brixton.RELEASE & rebuild
