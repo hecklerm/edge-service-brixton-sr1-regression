@@ -7,6 +7,8 @@
 * Backing service (quote-service) using https://github.com/hecklerm/quote-service-brixton-sr1-regression
 * Accessing the edge-service in your browser at http://localhost:8086/quote (which uses the defined Zuul route in the properties file for the edge-service to route to a local forward, to the /quotorama endpoint) produces the following stack trace (plus a bit for context):
 
+~~~~
+
 2016-06-14 22:11:12.737  INFO [edge-service,54489d0bc1f1cbd0,54489d0bc1f1cbd0,true] 2080 --- [nio-8086-exec-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : Mapped URL path [/user/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
 2016-06-14 22:11:12.737  INFO [edge-service,54489d0bc1f1cbd0,54489d0bc1f1cbd0,true] 2080 --- [nio-8086-exec-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : Mapped URL path [/quote/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
 2016-06-14 22:11:12.737  INFO [edge-service,54489d0bc1f1cbd0,54489d0bc1f1cbd0,true] 2080 --- [nio-8086-exec-1] o.s.c.n.zuul.web.ZuulHandlerMapping      : Mapped URL path [/qs/**] onto handler of type [class org.springframework.cloud.netflix.zuul.web.ZuulController]
@@ -113,6 +115,8 @@ java.lang.IllegalArgumentException: No matching constant for [0]
 	at java.lang.Thread.run(Thread.java:745) [na:1.8.0_77]
 
 2016-06-14 22:11:12.766  WARN [edge-service,,88e0c8f719f13b2b,true] 2080 --- [nio-8086-exec-1] o.s.cloud.sleuth.util.ExceptionUtils     : Tried to close span but it is not the current span: [Trace: 54489d0bc1f1cbd0, Span: 54489d0bc1f1cbd0, Parent: null, exportable:true].  You may have forgotten to close or detach [Trace: 54489d0bc1f1cbd0, Span: 88e0c8f719f13b2b, Parent: 54489d0bc1f1cbd0, exportable:true]
+
+~~~~
 
 ## To eliminate stack trace
 
